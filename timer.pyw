@@ -1,9 +1,12 @@
+import os
 from tkinter import *
 import time
 from timeit import default_timer as timer
 from datetime import timedelta
 from datetime import datetime
 
+global cwd
+cwd = os.getcwd()
 
 root = Tk()
 root.iconbitmap("icons\\timer_small.ico")
@@ -15,7 +18,7 @@ starting_stack.insert(0, "Start Roll")
 end_stack = Entry()
 end_stack.insert(0, "End Roll")
 
-path_to_file = "C:\\Users\\mvelchev\\Timer\\report.txt"
+path_to_file = cwd + "\\report.txt"
 raw_datetime = datetime.now()
 rounded_down_datetime = raw_datetime.replace(microsecond=0)
 date_time = str(rounded_down_datetime)
